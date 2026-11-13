@@ -1,0 +1,1323 @@
+# RIDENEXA — COMPLETE FULL-STACK IMPLEMENTATION MASTER PROMPT
+
+## Project Identity
+
+**Project Name:** RideNexa  
+**Tagline:** Intelligent Mobility. Fairer Rides.  
+**Problem Statement:** PS02 — Intelligent Ride Matching and Dynamic Driver Allocation System.
+
+You are a senior full-stack software engineer, system architect, UI/UX designer, database engineer, and intelligent mobility systems developer.
+
+Your task is to inspect, debug, complete, and improve my EXISTING RideNexa project into a fully functional, integrated, real-time ride-hailing platform.
+
+This is a hackathon prototype that must demonstrate genuine functionality to judges. It must not be a static website, frontend-only simulation, or collection of disconnected dashboards.
+
+**MOST IMPORTANT:** Do not simply generate a new UI or describe what should be implemented. Inspect the existing project, understand its current code, identify incomplete features and bugs, and implement the complete working system while preserving existing working functionality.
+
+---
+
+# PART 1 — PROJECT-WIDE IMPLEMENTATION RULES
+
+1. First inspect the existing project structure, package files, frontend, backend, APIs, database models, authentication, routes, and existing features.
+2. Reuse the existing stack and working implementation wherever possible.
+3. Do not unnecessarily rebuild the application or replace existing working modules.
+4. Do not remove existing functionality without a valid technical reason.
+5. Connect every frontend feature to real backend APIs and MongoDB.
+6. Use proper validation, error handling, loading states, and user feedback.
+7. Do not use hardcoded dashboard values as if they were real database records.
+8. Do not simulate successful bookings, driver assignments, approvals, or ride events using React state alone.
+9. Every important operation must be processed by the backend and persisted in MongoDB before broadcasting a success update.
+10. After refreshing a page or restarting the backend, the system must retrieve its latest state from MongoDB.
+11. Do not leave dead buttons, blank pages, placeholder routes, or nonfunctional navigation links.
+12. If a feature cannot be completed, clearly identify why rather than pretending it works.
+
+## Required Technology Stack
+
+Preserve the existing stack if already implemented. The intended architecture is:
+
+**Frontend**
+- React
+- Vite
+- Tailwind CSS
+- Responsive component-based interface
+- Leaflet maps with OpenStreetMap
+
+**Backend**
+- Node.js
+- Express.js
+- REST APIs
+- Socket.IO for real-time communication
+
+**Database**
+- MongoDB Atlas
+- Mongoose
+
+**Intelligent Services**
+- Python FastAPI and Scikit-learn for ML functionality, only if compatible with the existing architecture.
+- A practical fallback using the Node.js backend if the separate ML service is not feasible.
+
+**Maps and Routing**
+- OpenStreetMap
+- Leaflet
+- A routing service such as OSRM where available.
+- Clearly labelled fallback estimates if external routing is unavailable.
+
+Do not introduce unnecessary frameworks, dependencies, or architectural complexity.
+
+---
+
+# PART 2 — UNIQUE WEBSITE DESIGN AND USER EXPERIENCE
+
+Create a professional, distinctive, modern mobility platform.
+
+The design direction should combine:
+
+- Mobility Command Center
+- Urban Mobility Editorial
+- Smart City Intelligence
+
+Avoid generic AI-generated landing page layouts, repetitive sections, excessive gradients, and duplicated content.
+
+Use a consistent design system with:
+- Professional typography
+- Clear visual hierarchy
+- Strong contrast
+- Consistent spacing
+- Responsive layouts
+- Interactive maps
+- Well-designed cards and data visualizations
+- Professional icons
+- Smooth but restrained animations
+- Useful empty, loading, and error states
+
+## Public Website Sections
+
+### 1. Home
+- RideNexa identity and tagline.
+- Interactive city map.
+- Ride booking entry point.
+- Live mobility information.
+- Clear passenger and driver entry points.
+- Main value proposition.
+
+### 2. How It Works
+Explain the real user journey:
+
+Passenger booking → Intelligent driver selection → Driver request → Acceptance or rejection → Automatic reassignment → Ride completion.
+
+Use a clear visual journey rather than repeating the homepage content.
+
+### 3. Features
+Explain the five intelligent features:
+1. Predictive Demand Forecasting.
+2. Zone Intelligence.
+3. Fairness-Aware Driver Allocation.
+4. Automatic Driver Reassignment.
+5. Intelligent Ride Pooling.
+
+Each feature must have its own explanation and visual representation.
+
+### 4. Technology
+Show the actual system architecture:
+
+Passenger Dashboard / Driver Dashboard / Admin Dashboard  
+↓  
+React Frontend  
+↓  
+Express REST APIs and Socket.IO  
+↓  
+MongoDB Database  
+↓  
+Allocation Engine / Demand Forecasting / Zone Intelligence / Ride Pooling
+
+If a Python ML service exists, show its actual connection to the backend.
+
+### 5. About
+Include:
+- RideNexa's mission.
+- The mobility problem being addressed.
+- Its intelligent allocation approach.
+- Social and operational impact.
+- Future development scope.
+
+Do not invent team achievements, partnerships, integrations, or statistics.
+
+---
+
+# PART 3 — THREE CONNECTED ROLE-BASED DASHBOARDS
+
+Create three fully integrated dashboards using the same backend and MongoDB database.
+
+## A. Passenger Dashboard
+
+Passengers should be able to:
+
+1. Register and log in.
+2. Enter pickup and destination.
+3. Select locations using the map.
+4. View the route on the map.
+5. See estimated distance, travel time, and fare.
+6. Confirm a ride booking.
+7. Receive a unique ride ID.
+8. View ride status in real time.
+9. See the assigned driver and relevant ride details.
+10. Receive updates when a driver rejects and another driver is assigned.
+11. Cancel a ride before the applicable cancellation cutoff.
+12. View ride history and previous bookings.
+
+### Booking Workflow
+
+When a passenger confirms a booking:
+
+- Validate the pickup and destination.
+- Calculate or estimate route distance and ETA.
+- Calculate the estimated fare.
+- Create an actual ride document in MongoDB.
+- Generate a unique ride ID.
+- Save passenger ID, pickup, destination, route details, fare estimate, timestamp, and ride status.
+- Set the initial status to `Searching for Driver`.
+- Trigger the intelligent allocation engine.
+
+Do not display a confirmed booking until the backend successfully creates the ride.
+
+The passenger must be able to observe:
+- Searching for a driver.
+- Driver assigned.
+- Driver rejected.
+- Finding another driver.
+- New driver assigned.
+- Driver accepted.
+- Ride started.
+- Ride completed.
+- Ride cancelled or no drivers available.
+
+All changes must be received through real-time updates and recoverable from MongoDB after refresh.
+
+## B. Driver Dashboard
+
+Drivers should be able to:
+
+1. Register.
+2. Upload identity and driving documents.
+3. Enter personal details.
+4. Enter vehicle details.
+5. Enter driving licence details.
+6. Log in.
+7. View verification status.
+8. Go online or offline after approval.
+9. Share or update their current location.
+10. Receive individual ride requests.
+11. Accept or reject a request.
+12. View current and previous rides.
+13. View completed rides.
+14. View ratings and acceptance history.
+15. View rejection history.
+16. View idle duration and availability status.
+
+### Driver Registration and Verification
+
+A newly registered driver must automatically receive:
+
+`Pending Verification`
+
+Pending, rejected, suspended, offline, or busy drivers must not receive ride requests.
+
+The Admin must be able to:
+- Approve a driver.
+- Reject a driver with a reason.
+- Request document resubmission.
+- Suspend a driver.
+- View submitted documents.
+- Review personal, licence, and vehicle information.
+
+Every verification action must update MongoDB.
+
+Only approved drivers can go online and become eligible for allocation.
+
+### Driver Availability
+
+Track:
+- Online/offline status.
+- Current location.
+- Current ride.
+- Availability.
+- Idle duration.
+- Rating.
+- Completed rides.
+- Acceptance history.
+- Rejection history.
+- Previous allocation opportunities.
+
+A driver who rejects one particular ride should remain online and eligible for other rides if otherwise qualified.
+
+However, that driver must be excluded from subsequent assignment attempts for the same ride.
+
+Do not automatically make a driver offline simply because they rejected a request.
+
+---
+
+# PART 4 — ADMIN LOGIN: CRITICAL EXISTING BUG TO DEBUG
+
+**The Admin login and Admin dashboard currently do not open correctly. This is a critical existing bug. Fix the actual root cause before considering the Admin module complete.**
+
+Do not assume the issue is only a frontend navigation problem.
+
+Inspect the complete authentication flow:
+
+1. Is an Admin account actually present in MongoDB?
+2. Is the Admin password hashed correctly?
+3. Does the login API correctly validate the credentials?
+4. Is the Admin role stored correctly?
+5. Is the JWT generated correctly?
+6. Is the token stored and restored correctly?
+7. Does the authentication middleware verify the token?
+8. Does role-based authorization recognize the Admin role?
+9. Are protected Admin API routes working?
+10. Are frontend route guards preventing valid Admin access?
+11. Is the API base URL correct?
+12. Is MongoDB connected?
+13. Are dashboard APIs failing after login?
+14. Are there frontend console errors or backend exceptions?
+
+Check actual browser console errors, network responses, backend logs, and database records.
+
+### Secure Admin Provisioning
+
+Implement a secure Admin seed or provisioning script.
+
+Use environment variables:
+
+- `ADMIN_EMAIL`
+- `ADMIN_PASSWORD`
+
+Requirements:
+- Create an Admin account securely.
+- Hash the password using the existing password-hashing approach.
+- Assign the Admin role on the backend.
+- Prevent duplicate Admin accounts.
+- Never expose the Admin password in frontend code.
+- Do not allow public users to register themselves as Admin.
+- Return meaningful login errors without revealing sensitive information.
+
+### Admin Session
+
+After successful login:
+- Open the Admin dashboard.
+- Preserve the authenticated session after refresh.
+- Restore the correct Admin role.
+- Protect all Admin routes.
+- Allow secure logout.
+
+**Acceptance condition:** I must be able to log in using the provisioned Admin credentials, open the Admin dashboard, navigate through its pages, refresh the browser, and remain authenticated.
+
+---
+
+# PART 5 — COMPLETE ADMIN DASHBOARD
+
+The Admin dashboard is the main control center of RideNexa.
+
+It must have working navigation for:
+
+1. Overview.
+2. Driver Verification.
+3. Driver Management.
+4. Passenger Management.
+5. Live Ride Monitoring.
+6. Intelligent Driver Allocation.
+7. Live Demonstration Center.
+8. Demand Forecasting.
+9. Zone Intelligence.
+10. Ride Pooling.
+11. Ride History.
+12. Analytics.
+13. Settings.
+14. Logout.
+
+Every navigation item must open a real, implemented page.
+
+## Admin Overview
+
+Show actual MongoDB-backed information:
+
+- Total passengers.
+- Total registered drivers.
+- Approved drivers.
+- Pending drivers.
+- Online drivers.
+- Offline drivers.
+- Active rides.
+- Completed rides.
+- Cancelled rides.
+- Drivers currently available.
+- Current allocation activity.
+
+Do not use fabricated totals.
+
+## Driver Management
+
+Allow Admin to:
+- Search drivers.
+- Filter by verification status.
+- View driver profiles.
+- View vehicle information.
+- View uploaded documents.
+- Approve or reject drivers.
+- Suspend or reactivate drivers.
+- Review driver activity.
+
+## Passenger Management
+
+Allow Admin to:
+- View passengers.
+- Search passenger records.
+- View booking history.
+- View ride details.
+- Review account status.
+
+## Live Ride Monitoring
+
+Show:
+- Active rides.
+- Pickup and destination.
+- Current ride status.
+- Assigned driver.
+- Passenger information.
+- Assignment history.
+- Reassignment history.
+- Ride events.
+
+Updates must arrive in real time.
+
+---
+
+# PART 6 — INTELLIGENT DRIVER ALLOCATION ENGINE
+
+This is one of the core innovations of RideNexa.
+
+Do not simply select the nearest driver.
+
+The allocation engine must consider:
+
+- Driver eligibility.
+- Pickup ETA.
+- Driver fairness.
+- Reliability.
+- Acceptance history.
+- Workload.
+- Historical allocation opportunities.
+- Current demand.
+- Driver availability.
+
+## Step 1: Filter Eligible Drivers
+
+Before calculating scores, exclude drivers who are:
+
+- Not approved.
+- Offline.
+- Busy.
+- Already assigned to an active ride.
+- Missing a valid latest location.
+- Outside the configured maximum pickup ETA.
+- Not qualified for the requested vehicle category.
+- Suspended or otherwise ineligible.
+- Previously rejected or timed out for this specific ride.
+
+Only eligible drivers proceed to ranking.
+
+## Step 2: Calculate Allocation Score
+
+Use the following initial configurable weights:
+
+| Allocation factor | Weight |
+|---|---:|
+| ETA suitability | 40% |
+| Fair driver opportunity | 30% |
+| Reliability and acceptance history | 15% |
+| Workload suitability | 15% |
+
+Total: 100%.
+
+These weights are provisional engineering choices, not scientifically validated values. Keep them configurable.
+
+### ETA Suitability — 40%
+
+Evaluate estimated pickup time.
+
+Drivers with acceptable pickup ETA should receive higher suitability scores.
+
+### Fair Driver Opportunity — 30%
+
+Consider:
+- Previous allocation opportunities.
+- Recent ride assignments.
+- Completed ride distribution.
+- Idle duration.
+- Historical access to ride requests.
+
+Avoid repeatedly assigning all rides to the same drivers when other eligible drivers are also suitable.
+
+Fairness must never override the maximum acceptable pickup ETA.
+
+### Reliability — 15%
+
+Use relevant historical data:
+- Acceptance rate.
+- Completed rides.
+- Valid response history.
+- Appropriate reliability indicators.
+
+Do not permanently punish a driver for a single rejection.
+
+### Workload Suitability — 15%
+
+Consider:
+- Current workload.
+- Idle duration.
+- Recent activity.
+- Ride history.
+
+## Step 3: Rank and Select
+
+- Calculate each eligible driver's score.
+- Display the ranking in the Admin dashboard.
+- Explain the score components.
+- Select the highest-ranked suitable driver.
+- Persist the allocation decision and score breakdown in MongoDB.
+
+Use consistent normalization so the scores are comparable.
+
+If historical records are insufficient, use transparent neutral defaults rather than fabricated historical claims.
+
+---
+
+# PART 7 — INDIVIDUAL DRIVER REQUEST AND AUTOMATIC REASSIGNMENT
+
+**Automatic reassignment after a driver rejects or times out is a mandatory core feature. It must work without an Admin manually clicking a reassignment button.**
+
+This is the most important live demonstration scenario.
+
+## Individual Assignment
+
+When a ride is created:
+
+1. The allocation engine ranks eligible drivers.
+2. It selects one suitable driver.
+3. The backend creates a DriverAssignment record in MongoDB.
+4. The assignment includes ride ID, driver ID, score breakdown, timestamp, and response deadline.
+5. The backend sends the request to that driver's authenticated Socket.IO room.
+6. The Driver dashboard displays the request.
+
+The driver must see:
+- Pickup location.
+- Destination.
+- Estimated pickup time.
+- Estimated ride distance.
+- Estimated fare.
+- Accept button.
+- Reject button.
+- Response countdown.
+
+Do not broadcast one sequential assignment request to every driver simultaneously.
+
+## Driver Acceptance
+
+When the assigned driver accepts:
+
+1. Validate the authenticated driver.
+2. Verify that the driver is the current assigned driver.
+3. Verify that the assignment is still pending.
+4. Verify that the ride has not been cancelled or accepted by another driver.
+5. Use atomic database updates or transactions where supported.
+6. Mark the assignment as Accepted.
+7. Update the ride status.
+8. Mark the driver as Busy.
+9. Persist all changes.
+10. Broadcast the update to Passenger and Admin dashboards.
+
+Only one driver may successfully accept a particular ride.
+
+A driver must not accept two active rides simultaneously.
+
+## Driver Rejection — Mandatory Automatic Reassignment
+
+When Driver A rejects a ride, execute the following complete backend workflow:
+
+1. Authenticate the driver.
+2. Validate that Driver A is the currently assigned driver.
+3. Verify that the assignment is still pending.
+4. Save the rejection in MongoDB with timestamp and reason if supplied.
+5. Change the assignment status to `Rejected`.
+6. Add Driver A to the exclusion list for this ride.
+7. Keep Driver A online for other rides if otherwise eligible.
+8. Change the ride status to `Reassigning`.
+9. Persist the ride event.
+10. Automatically retrieve the remaining eligible drivers.
+11. Recalculate ETA, fairness, reliability, and workload scores.
+12. Rank the remaining drivers.
+13. Select the next suitable driver.
+14. Create a new DriverAssignment in MongoDB.
+15. Send the request to Driver B through Socket.IO.
+16. Update the Passenger dashboard.
+17. Update the Admin dashboard.
+18. Persist the new assignment and event history.
+
+No Admin action must be required to trigger this workflow.
+
+### Multiple Rejections
+
+If Driver B also rejects:
+
+- Save Driver B's rejection.
+- Exclude Driver B from this ride.
+- Recalculate the ranking.
+- Select the next eligible driver.
+- Send the next individual request.
+
+Continue until:
+- A driver accepts.
+- The passenger cancels.
+- No eligible drivers remain.
+- The configured retry limit is reached.
+
+If no suitable driver remains, persist a meaningful status such as `No Drivers Available` and update the passenger.
+
+Do not silently stop the workflow.
+
+## Timeout Handling
+
+Implement server-side assignment timeouts.
+
+If the selected driver does not respond before the deadline:
+
+1. Mark the assignment as `Timed Out`.
+2. Save the event in MongoDB.
+3. Exclude that driver from further attempts for this ride.
+4. Trigger the same automatic reassignment workflow.
+5. Notify Passenger and Admin.
+
+Timeout processing must not depend on the driver's browser remaining open.
+
+Handle:
+- Server restarts.
+- Duplicate Socket.IO events.
+- Duplicate API requests.
+- Passenger cancellation.
+- Driver going offline.
+- Driver becoming busy.
+- Concurrent assignment attempts.
+
+Ensure database consistency and prevent two drivers from claiming the same ride.
+
+---
+
+# PART 8 — MONGODB PERSISTENCE AND EVENT HISTORY
+
+**MongoDB must be the source of truth for all important live activity.**
+
+Create or update appropriate Mongoose models, including:
+
+- User.
+- Driver.
+- Passenger.
+- Vehicle.
+- Ride.
+- DriverAssignment.
+- RideEvent.
+- DriverHistory or AllocationHistory.
+- DemandHistory.
+- ZoneData.
+- PoolingGroup, if required.
+
+Use suitable schema validation, indexes, timestamps, and references.
+
+Persist:
+
+- Passenger booking.
+- Driver registration.
+- Document submissions.
+- Verification changes.
+- Driver online/offline status.
+- Driver location updates.
+- Allocation rankings.
+- Assignment attempts.
+- Driver acceptance.
+- Driver rejection.
+- Assignment timeout.
+- Automatic reassignment.
+- Passenger cancellation.
+- Ride status transitions.
+- Ride completion.
+- Historical allocation opportunities.
+- Admin actions.
+- Demo scenario records.
+
+Create a chronological RideEvent or equivalent event-history model.
+
+Every significant event must include:
+- Ride ID where applicable.
+- Event type.
+- Actor ID and role.
+- Timestamp.
+- Relevant details.
+- Assignment ID where applicable.
+
+**Important execution order:**
+
+Database operation → successful persistence → Socket.IO broadcast → frontend update.
+
+Never broadcast a successful operation before the backend has confirmed its database update.
+
+After refresh, fetch the real database state and event history.
+
+---
+
+# PART 9 — ADMIN LIVE DEMONSTRATION CENTER
+
+Create a dedicated **Live Demonstration Center** inside the Admin dashboard.
+
+This is the main judge-facing control center.
+
+It must show the complete RideNexa workflow live.
+
+Include the following panels:
+
+## 1. Passenger Booking Monitor
+
+Show:
+- Passenger.
+- Ride ID.
+- Pickup.
+- Destination.
+- Fare estimate.
+- Booking time.
+- Ride status.
+
+## 2. Driver Availability Monitor
+
+Show:
+- Driver name or ID.
+- Online/offline status.
+- Current location.
+- Idle duration.
+- Rating.
+- Completed rides.
+- Current assignment.
+- Eligibility.
+
+## 3. Allocation Ranking Monitor
+
+Show the eligible drivers and their ranking.
+
+Display:
+- ETA score.
+- Fairness score.
+- Reliability score.
+- Workload score.
+- Total score.
+- Selected driver.
+- Explanation for selection.
+
+## 4. Live Assignment Monitor
+
+Show:
+- Current assigned driver.
+- Assignment status.
+- Request sent time.
+- Response deadline.
+- Accepted/rejected/timed-out status.
+
+## 5. Automatic Reassignment Monitor
+
+Show:
+- Original selected driver.
+- Rejection or timeout.
+- Excluded driver.
+- Updated eligible driver list.
+- Recalculated rankings.
+- Next selected driver.
+- New assignment status.
+
+## 6. Persistent Event Timeline
+
+Display chronological MongoDB-backed events such as:
+
+- Passenger created a booking.
+- Ride stored successfully.
+- Allocation engine started.
+- Driver A selected.
+- Request sent to Driver A.
+- Driver A rejected.
+- Rejection persisted.
+- Reassignment started automatically.
+- Driver B selected.
+- New request sent to Driver B.
+- Driver B accepted.
+- Ride assigned successfully.
+
+These must be real events generated by backend operations, not hardcoded messages.
+
+The timeline must update live and remain available after refreshing the page.
+
+The Admin should be able to navigate directly from this center to driver verification, ride history, analytics, and management pages.
+
+---
+
+# PART 10 — JUDGE DEMO MODE
+
+Create a repeatable, judge-friendly demonstration mode.
+
+The demo must use the same backend allocation engine, assignment records, rejection handlers, timeout handlers, and MongoDB persistence as the actual application.
+
+Do not build a separate fake allocation algorithm.
+
+## Demo Controls
+
+Include:
+- Load Demo Scenario.
+- Reset Demo Scenario.
+- Start Demo.
+- View Demo Data.
+- Simulate Rejection.
+- Simulate Timeout.
+
+Only demo records may be reset. Never delete or modify real user records during a demo reset.
+
+Clearly label simulated historical data as demo or simulated data.
+
+## Demo Scenario
+
+Prepare:
+
+- One demo passenger.
+- Three approved demo drivers.
+- Three valid demo driver locations.
+- Different ETA values.
+- Different idle durations.
+- Different ratings.
+- Different previous allocation opportunities.
+- Relevant historical allocation records.
+
+The demo should make the ranking understandable and allow judges to see why one driver was selected.
+
+The passenger must still confirm an actual booking through the Passenger dashboard.
+
+The selected driver must receive the request through the Driver dashboard.
+
+The Admin must observe the workflow in the Live Demonstration Center.
+
+## Required Live Demo Sequence
+
+1. Admin loads the demo scenario.
+2. The system prepares the three approved demo drivers and their labelled historical data.
+3. Passenger logs in and enters pickup and destination.
+4. Passenger confirms the booking.
+5. Backend creates the ride in MongoDB.
+6. Allocation engine filters and ranks the three drivers.
+7. Admin sees the score breakdown.
+8. Driver A receives the individual request.
+9. Driver A rejects the request.
+10. Backend saves the rejection.
+11. Automatic reassignment begins without Admin intervention.
+12. Driver A remains online but is excluded from this ride.
+13. The allocation engine selects Driver B.
+14. Driver B receives the new request.
+15. Passenger sees the reassignment update.
+16. Admin sees the complete event timeline.
+17. Driver B accepts.
+18. Ride becomes assigned.
+19. Admin and Passenger see the successful assignment.
+
+The same scenario must also support timeout and multiple rejection testing.
+
+---
+
+# PART 11 — SOCKET.IO REAL-TIME ARCHITECTURE
+
+Implement authenticated Socket.IO communication.
+
+Use separate authenticated rooms for:
+- Passenger.
+- Driver.
+- Admin.
+
+Only authorized users should receive relevant private events.
+
+Suggested events include:
+
+**Passenger**
+- `ride:created`
+- `ride:searching`
+- `ride:driver-assigned`
+- `ride:reassigning`
+- `ride:no-driver`
+- `ride:status-updated`
+- `ride:cancelled`
+
+**Driver**
+- `driver:ride-request`
+- `driver:request-accepted`
+- `driver:request-rejected`
+- `driver:availability-updated`
+- `driver:location-updated`
+
+**Admin**
+- `admin:ride-created`
+- `admin:driver-status-updated`
+- `admin:allocation-started`
+- `admin:allocation-ranked`
+- `admin:assignment-created`
+- `admin:driver-rejected`
+- `admin:reassignment-started`
+- `admin:ride-updated`
+- `admin:verification-updated`
+
+Validate all event inputs on the backend.
+
+Do not trust frontend-supplied user IDs or roles.
+
+Authenticate socket connections using the application's existing secure authentication mechanism.
+
+Ensure events are broadcast only after the relevant database changes succeed.
+
+---
+
+# PART 12 — FIVE ADVANCED INTELLIGENT FEATURES
+
+All five features must be integrated into the same RideNexa application and backend.
+
+## Feature 1: Predictive Demand Forecasting
+
+Purpose: Predict areas where ride demand may increase.
+
+Use historical ride records where available.
+
+Consider:
+- Time of day.
+- Day of week.
+- Pickup zone.
+- Previous ride volume.
+- Available driver count.
+- Demand patterns.
+
+Display:
+- Predicted demand.
+- High-demand time periods.
+- High-demand zones.
+- Historical versus predicted values.
+
+If historical data is insufficient, use clearly labelled simulated demo data.
+
+Do not present simulated predictions as real-world validated forecasts.
+
+A simple Scikit-learn model can be used if the dataset and service integration are feasible. Otherwise implement a transparent baseline prediction method.
+
+## Feature 2: Zone Intelligence
+
+Divide the demonstration city into practical zones.
+
+Show:
+- Ride demand per zone.
+- Available drivers per zone.
+- Demand-to-supply ratio.
+- High-demand zones.
+- Low-supply zones.
+- Driver repositioning recommendations.
+
+Use a map or visual zone representation.
+
+If surge pricing is implemented:
+- Apply it only when a configured demand threshold is crossed.
+- Keep pricing capped and configurable.
+- Clearly disclose the fare adjustment before passenger confirmation.
+- Store the calculation and final estimate.
+
+Do not add arbitrary or hidden fare increases.
+
+## Feature 3: Fairness-Aware Driver Allocation
+
+Implement fairness as part of the actual allocation engine.
+
+Track historical allocation opportunities and assignments.
+
+Avoid giving all requests to the nearest or same small group of drivers.
+
+Balance fairness with:
+- ETA.
+- Driver eligibility.
+- Reliability.
+- Workload.
+- Service quality.
+
+Explain the fairness calculation in the Admin dashboard.
+
+## Feature 4: Automatic Driver Reassignment
+
+This must be fully integrated into the booking and allocation workflow.
+
+A rejection or timeout must trigger the next allocation attempt automatically.
+
+Persist every attempt and make the workflow visible to the Passenger, Driver, and Admin.
+
+This feature must work with real MongoDB records and the same production allocation handler used by the demo.
+
+## Feature 5: Intelligent Ride Pooling
+
+Allow passengers to opt into shared rides.
+
+Consider:
+- Similar pickup areas.
+- Similar destination or route direction.
+- Vehicle capacity.
+- Additional detour distance.
+- Estimated extra travel time.
+- Passenger consent.
+
+Only create a shared ride when compatibility conditions are satisfied.
+
+Show:
+- Potential compatible rides.
+- Proposed shared route.
+- Passenger capacity.
+- Detour estimate.
+- Fare allocation.
+
+Pooling must be optional. Never force passengers into a shared ride.
+
+Do not claim pooling is active when no compatible rides exist.
+
+---
+
+# PART 13 — ANALYTICS AND RIDE HISTORY
+
+Create real database-backed analytics.
+
+Include:
+- Total rides.
+- Completed rides.
+- Cancelled rides.
+- Average pickup ETA.
+- Average allocation attempts.
+- Driver acceptance rate.
+- Driver rejection rate.
+- Timeout rate.
+- Reassignment success rate.
+- Driver allocation distribution.
+- Demand by zone.
+- Demand by time period.
+
+Provide filters such as date range, ride status, and zone where practical.
+
+Ride History should show actual ride and assignment records.
+
+Make a distinction between:
+- Actual application records.
+- Demo records.
+- Simulated historical data.
+
+Never mix demo records into real operational statistics without clearly labelling them.
+
+---
+
+# PART 14 — API AND BACKEND INTEGRATION
+
+Inspect and organize the existing Express API structure.
+
+Ensure APIs exist and work for:
+
+### Authentication
+- Passenger registration/login.
+- Driver registration/login.
+- Admin login.
+- Session restoration.
+- Logout.
+
+### Driver
+- Profile.
+- Document upload.
+- Verification status.
+- Availability.
+- Location.
+- Ride request.
+- Accept.
+- Reject.
+- Ride history.
+
+### Passenger
+- Profile.
+- Route estimate.
+- Fare estimate.
+- Create booking.
+- Ride status.
+- Cancel booking.
+- Ride history.
+
+### Allocation
+- Find eligible drivers.
+- Calculate scores.
+- Rank drivers.
+- Create assignment.
+- Handle rejection.
+- Handle timeout.
+- Trigger reassignment.
+- Handle no-driver scenarios.
+
+### Admin
+- Overview.
+- Driver verification.
+- Driver management.
+- Passenger management.
+- Live rides.
+- Allocation monitoring.
+- Demo management.
+- Analytics.
+- Settings.
+
+Use proper:
+- HTTP status codes.
+- Request validation.
+- Authentication.
+- Role-based authorization.
+- Error handling.
+- Consistent response structures.
+
+Avoid exposing passwords, secrets, tokens, or private documents.
+
+For file uploads, validate file type and size and use the existing storage architecture if available.
+
+---
+
+# PART 15 — SECURITY AND DATA CONSISTENCY
+
+Implement appropriate security protections:
+
+- Secure password hashing.
+- JWT or existing session-based authentication.
+- Role-based access control.
+- Protected APIs.
+- Input validation.
+- File upload validation.
+- Environment-based secrets.
+- Rate limiting for sensitive endpoints where appropriate.
+- CORS configuration.
+- Secure database access.
+- Authorization checks for every driver assignment response.
+
+Important consistency requirements:
+
+1. Only the currently assigned driver can accept or reject an assignment.
+2. A passenger can only access their own ride records.
+3. A driver can only access their authorized requests and ride information.
+4. An Admin can access authorized Admin functionality.
+5. A ride cannot be accepted by two drivers.
+6. A driver cannot have two simultaneous active assignments.
+7. A rejected driver cannot receive another attempt for the same ride.
+8. A cancelled ride cannot be reassigned.
+9. Duplicate requests must not create duplicate assignments.
+10. All state transitions must be persisted and validated.
+
+Use MongoDB transactions where supported, or an appropriate atomic-update strategy.
+
+---
+
+# PART 16 — COMPLETE TESTING AND VALIDATION
+
+Do not stop after generating the interface.
+
+Run and verify the application.
+
+## Admin Testing
+
+- Admin account provisioning.
+- Admin login.
+- Correct role assignment.
+- Admin dashboard opens.
+- Admin navigation works.
+- Refresh preserves authentication.
+- Protected routes reject unauthorized users.
+- Logout works.
+
+## Driver Testing
+
+- Driver registration.
+- Document upload.
+- Pending verification.
+- Admin approval.
+- Admin rejection.
+- Resubmission.
+- Suspension.
+- Approved driver login.
+- Online/offline status.
+- Location updates.
+- Eligibility filtering.
+
+## Passenger Testing
+
+- Passenger registration/login.
+- Pickup and destination selection.
+- Route and fare estimate.
+- Booking confirmation.
+- Ride record creation.
+- Ride history.
+- Ride cancellation.
+
+## Allocation Testing
+
+- Eligible-driver filtering.
+- ETA score.
+- Fairness score.
+- Reliability score.
+- Workload score.
+- Final ranking.
+- Score explanation.
+- Assignment persistence.
+
+## Critical Reassignment Testing
+
+Test the following exact scenario:
+
+1. Passenger books a ride.
+2. Driver A receives the request.
+3. Driver A rejects it.
+4. Rejection is stored in MongoDB.
+5. Driver A remains online but is excluded from this ride.
+6. Reassignment starts automatically.
+7. Driver B receives a new request.
+8. Driver B accepts.
+9. Passenger sees the update.
+10. Admin sees all events in the persistent timeline.
+
+Also test:
+
+- Driver B rejects.
+- Multiple sequential rejections.
+- Driver timeout.
+- No eligible drivers.
+- Passenger cancellation during reassignment.
+- Driver going offline during assignment.
+- Duplicate accept/reject requests.
+- Concurrent acceptance attempts.
+- Server restart recovery.
+- Refreshing all three dashboards.
+
+## Advanced Feature Testing
+
+- Demand forecasting.
+- Zone intelligence.
+- Driver repositioning recommendations.
+- Configured surge pricing disclosure.
+- Ride pooling compatibility.
+- Fairness allocation.
+- Demo data isolation.
+- Analytics accuracy.
+
+---
+
+# PART 17 — FINAL ACCEPTANCE CRITERIA
+
+The project is not complete until the following conditions are satisfied.
+
+### 1. Working Website
+The public website loads, looks professional, and all navigation works.
+
+### 2. Working Passenger Dashboard
+A passenger can create and confirm a ride through the actual backend.
+
+### 3. Working Driver Dashboard
+An approved driver can receive, accept, or reject an individual ride request.
+
+### 4. Working Admin Dashboard
+The existing Admin login issue is debugged and fixed. Admin can access all implemented pages.
+
+### 5. Real MongoDB Persistence
+Bookings, assignments, driver verification, rejection records, and event history persist in MongoDB.
+
+### 6. Intelligent Allocation
+Eligible drivers are ranked using ETA, fairness, reliability, and workload.
+
+### 7. Automatic Reassignment
+A driver rejection or timeout triggers the next assignment automatically without manual Admin intervention.
+
+### 8. Real-Time Updates
+Passenger, Driver, and Admin dashboards receive relevant Socket.IO updates.
+
+### 9. Persistent Live Demonstration
+The Admin Live Demonstration Center displays actual backend events and retains them after refresh.
+
+### 10. Repeatable Judge Demo
+The Judge Demo Mode can load, execute, and reset a clearly labelled scenario without touching real records.
+
+### 11. Advanced Features
+Demand forecasting, zone intelligence, fairness-aware allocation, automatic reassignment, and optional ride pooling are integrated to the extent implemented and verifiably working.
+
+### 12. Reliable Error Handling
+The system handles rejections, timeouts, cancellations, unavailable drivers, duplicate events, and concurrency.
+
+---
+
+# PART 18 — IMPLEMENTATION INSTRUCTIONS AND FINAL REPORT
+
+Work in the following order:
+
+**Phase 1:** Inspect the existing project and identify the actual Admin login bug and all incomplete modules.
+
+**Phase 2:** Fix Admin authentication, provisioning, role authorization, and dashboard access.
+
+**Phase 3:** Complete MongoDB models, backend APIs, and persistent event history.
+
+**Phase 4:** Complete driver registration, document submission, and Admin verification.
+
+**Phase 5:** Complete passenger booking and map integration.
+
+**Phase 6:** Implement intelligent driver eligibility, ranking, and allocation.
+
+**Phase 7:** Implement individual driver requests, acceptance, rejection, timeout, and automatic sequential reassignment.
+
+**Phase 8:** Connect all three dashboards through authenticated Socket.IO communication.
+
+**Phase 9:** Implement the Admin Live Demonstration Center and Judge Demo Mode.
+
+**Phase 10:** Integrate demand forecasting, zone intelligence, fairness, and ride pooling.
+
+**Phase 11:** Complete ride history, analytics, testing, and responsive UI improvements.
+
+**Phase 12:** Run the application and verify the complete end-to-end demo.
+
+Do not stop after completing only one phase if the remaining work is necessary for the core workflow. Continue implementation as far as the available environment permits.
+
+## Final Delivery Report
+
+When implementation is finished, provide a clear report containing:
+
+1. Existing project structure inspected.
+2. Actual root cause of the Admin login bug.
+3. Files created or modified.
+4. Features completed.
+5. APIs implemented.
+6. MongoDB models and collections used.
+7. Socket.IO events implemented.
+8. Allocation algorithm and score weights.
+9. Automatic reassignment workflow.
+10. Judge Demo Mode instructions.
+11. Environment variables required.
+12. Exact commands to run frontend and backend.
+13. Admin provisioning instructions.
+14. Test results: passed, failed, and not tested.
+15. Any remaining limitations.
+
+Do not claim that something is completed unless it has actually been implemented and verified.
+
+---
+
+# FINAL INSTRUCTION
+
+Build RideNexa as one connected, working intelligent mobility system.
+
+The most important demonstration is:
+
+**Passenger confirms a booking → Backend saves the ride in MongoDB → Intelligent engine ranks eligible drivers → Driver A receives the request → Driver A rejects → Rejection is saved → Backend automatically recalculates and selects Driver B → Driver B receives the request → Driver B accepts → Passenger and Admin dashboards update live → Complete event history remains stored in MongoDB.**
+
+The entire process must work through the actual application, not through hardcoded messages or frontend-only simulations.
+
+Prioritize correctness, integration, real functionality, and a reliable judge-facing demonstration over unnecessary complexity.
+
+**Do not just explain the implementation. Inspect the existing code, make the required changes, run the application, test the workflow, and report honestly what works.**

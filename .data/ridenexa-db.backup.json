@@ -1,0 +1,1567 @@
+{
+  "users": [
+    {
+      "id": "user-passenger-demo",
+      "name": "Aarav Sharma",
+      "email": "passenger@ridenexa.io",
+      "passwordHash": "$2b$10$r8QkdKhEl8qxQOTd6zVD/e6CVtm0vBpbWYRcMth1zbCKtiRCw7/lq",
+      "role": "PASSENGER",
+      "phone": "+91 98450 11223",
+      "createdAt": "2026-11-13T17:52:02.555Z"
+    },
+    {
+      "id": "user-driver-demo",
+      "name": "Arjun Nair",
+      "email": "driver@ridenexa.io",
+      "passwordHash": "$2b$10$r8QkdKhEl8qxQOTd6zVD/e6CVtm0vBpbWYRcMth1zbCKtiRCw7/lq",
+      "role": "DRIVER",
+      "phone": "+91 98450 44556",
+      "createdAt": "2026-11-13T17:52:02.555Z"
+    },
+    {
+      "id": "user-admin-mwfc7kcj",
+      "name": "RideNexa Administrator",
+      "email": "verify-admin@ridenexa.test",
+      "passwordHash": "$2b$10$jZCI5xJVF3yGDhUOFneGs.QdAHBYwF3D2luIPEaQ8tRho8biH1mPm",
+      "role": "ADMIN",
+      "createdAt": "2026-11-13T18:55:45.859Z"
+    },
+    {
+      "id": "user-1794596153236-d3qtw",
+      "name": "SOS Passenger One",
+      "email": "sos-p1@ridenexa.test",
+      "passwordHash": "$2b$10$0QS6YNcmUsGy7ytw.hsZZOShIpQ.4I4CwEs8/WfXMW5Ve9D/3y1CC",
+      "role": "PASSENGER",
+      "phone": "+91-9800000001",
+      "createdAt": "2026-11-13T18:55:53.236Z"
+    },
+    {
+      "id": "user-1794596153340-4sjma",
+      "name": "SOS Passenger Two",
+      "email": "sos-p2@ridenexa.test",
+      "passwordHash": "$2b$10$Pu66SS1Z8NQBOOh.VPw4qu6jwkSJ2kPVOPgmpOEpuJ02AmlG/f.Wu",
+      "role": "PASSENGER",
+      "phone": "+91-9800000002",
+      "createdAt": "2026-11-13T18:55:53.340Z"
+    },
+    {
+      "id": "user-1794596153445-xpz7m",
+      "name": "SOS Test Driver",
+      "email": "sos-drv@ridenexa.test",
+      "passwordHash": "$2b$10$dcCq7N/ZBJ6ttuKtU66DKeKbYM14d1Ie5ajPTomD9RCf9S59VU4xK",
+      "role": "DRIVER",
+      "phone": "+91-9800000003",
+      "createdAt": "2026-11-13T18:55:53.445Z"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "drv-101",
+      "userId": "user-driver-demo",
+      "name": "Arjun Nair",
+      "vehicleModel": "Tata Nexon EV",
+      "vehicleTier": "EV_COMFORT",
+      "plateNumber": "KA-01-EV-4821",
+      "vehicleCapacity": 4,
+      "licenseNumber": "KA01-2019-0048211",
+      "licenseExpiry": "2031-06-30",
+      "verificationStatus": "APPROVED",
+      "verifiedAt": "2026-11-13T17:52:02.556Z",
+      "verifiedBy": "system-seed",
+      "rating": 4.92,
+      "isOnline": true,
+      "isAvailable": true,
+      "coordinates": {
+        "lat": 12.98019,
+        "lng": 77.60017
+      },
+      "areaName": "MG Road Transit Hub",
+      "ridesCompletedToday": 9,
+      "totalRidesCompleted": 1420,
+      "dailyEarnings": 1840,
+      "minutesSinceLastRide": 8,
+      "acceptanceRate": 0.96,
+      "allocationOpportunities": 11,
+      "acceptedCount": 10,
+      "rejectedCount": 1,
+      "timedOutCount": 0,
+      "isSimulatedLocation": true,
+      "lastUpdatedAt": "2026-11-13T19:10:25.854Z",
+      "documents": []
+    },
+    {
+      "id": "drv-102",
+      "name": "Meera Kulkarni",
+      "vehicleModel": "MG ZS EV",
+      "vehicleTier": "EV_COMFORT",
+      "plateNumber": "KA-03-EV-9012",
+      "vehicleCapacity": 4,
+      "licenseNumber": "KA03-2020-0090124",
+      "licenseExpiry": "2032-04-15",
+      "verificationStatus": "APPROVED",
+      "verifiedAt": "2026-11-13T17:52:02.556Z",
+      "verifiedBy": "system-seed",
+      "rating": 4.88,
+      "isOnline": true,
+      "isAvailable": true,
+      "coordinates": {
+        "lat": 12.96523,
+        "lng": 77.62251
+      },
+      "areaName": "Richmond Circle",
+      "ridesCompletedToday": 3,
+      "totalRidesCompleted": 890,
+      "dailyEarnings": 620,
+      "minutesSinceLastRide": 42,
+      "acceptanceRate": 0.98,
+      "allocationOpportunities": 4,
+      "acceptedCount": 4,
+      "rejectedCount": 0,
+      "timedOutCount": 0,
+      "isSimulatedLocation": true,
+      "lastUpdatedAt": "2026-11-13T19:10:25.855Z",
+      "documents": []
+    },
+    {
+      "id": "drv-103",
+      "name": "Karthik Gowda",
+      "vehicleModel": "Maruti Dzire CNG",
+      "vehicleTier": "CITY_SEDAN",
+      "plateNumber": "KA-05-MN-3319",
+      "vehicleCapacity": 4,
+      "licenseNumber": "KA05-2018-0033198",
+      "licenseExpiry": "2029-11-20",
+      "verificationStatus": "APPROVED",
+      "verifiedAt": "2026-11-13T17:52:02.556Z",
+      "verifiedBy": "system-seed",
+      "rating": 4.81,
+      "isOnline": true,
+      "isAvailable": true,
+      "coordinates": {
+        "lat": 12.96474,
+        "lng": 77.62895
+      },
+      "areaName": "Domlur Flyover",
+      "ridesCompletedToday": 4,
+      "totalRidesCompleted": 1120,
+      "dailyEarnings": 790,
+      "minutesSinceLastRide": 31,
+      "acceptanceRate": 0.93,
+      "allocationOpportunities": 6,
+      "acceptedCount": 5,
+      "rejectedCount": 1,
+      "timedOutCount": 0,
+      "isSimulatedLocation": true,
+      "lastUpdatedAt": "2026-11-13T19:10:25.855Z",
+      "documents": []
+    },
+    {
+      "id": "drv-104",
+      "name": "Farhan Siddiqui",
+      "vehicleModel": "Hyundai Aura",
+      "vehicleTier": "CITY_SEDAN",
+      "plateNumber": "KA-02-AB-7740",
+      "vehicleCapacity": 4,
+      "licenseNumber": "KA02-2017-0077402",
+      "licenseExpiry": "2028-09-12",
+      "verificationStatus": "APPROVED",
+      "verifiedAt": "2026-11-13T17:52:02.556Z",
+      "verifiedBy": "system-seed",
+      "rating": 4.76,
+      "isOnline": true,
+      "isAvailable": true,
+      "coordinates": {
+        "lat": 12.93439,
+        "lng": 77.62119
+      },
+      "areaName": "Koramangala 4th Block",
+      "ridesCompletedToday": 11,
+      "totalRidesCompleted": 2150,
+      "dailyEarnings": 2310,
+      "minutesSinceLastRide": 5,
+      "acceptanceRate": 0.91,
+      "allocationOpportunities": 14,
+      "acceptedCount": 12,
+      "rejectedCount": 2,
+      "timedOutCount": 0,
+      "isSimulatedLocation": true,
+      "lastUpdatedAt": "2026-11-13T19:10:25.856Z",
+      "documents": []
+    },
+    {
+      "id": "drv-105",
+      "name": "Priya Menon",
+      "vehicleModel": "Tata Tiago EV",
+      "vehicleTier": "ECO_HATCH",
+      "plateNumber": "KA-04-EV-1193",
+      "vehicleCapacity": 4,
+      "licenseNumber": "KA04-2021-0011935",
+      "licenseExpiry": "2033-01-25",
+      "verificationStatus": "APPROVED",
+      "verifiedAt": "2026-11-13T17:52:02.556Z",
+      "verifiedBy": "system-seed",
+      "rating": 4.95,
+      "isOnline": true,
+      "isAvailable": true,
+      "coordinates": {
+        "lat": 12.93487,
+        "lng": 77.60415
+      },
+      "areaName": "Jayanagar 4th Block",
+      "ridesCompletedToday": 2,
+      "totalRidesCompleted": 640,
+      "dailyEarnings": 430,
+      "minutesSinceLastRide": 51,
+      "acceptanceRate": 0.99,
+      "allocationOpportunities": 3,
+      "acceptedCount": 3,
+      "rejectedCount": 0,
+      "timedOutCount": 0,
+      "isSimulatedLocation": true,
+      "lastUpdatedAt": "2026-11-13T19:10:25.857Z",
+      "documents": []
+    },
+    {
+      "id": "drv-106",
+      "name": "Rohan Deshmukh",
+      "vehicleModel": "Toyota Innova Hycross",
+      "vehicleTier": "POOL_SHARE",
+      "plateNumber": "KA-01-MP-6520",
+      "vehicleCapacity": 6,
+      "licenseNumber": "KA01-2019-0065209",
+      "licenseExpiry": "2030-08-18",
+      "verificationStatus": "APPROVED",
+      "verifiedAt": "2026-11-13T17:52:02.556Z",
+      "verifiedBy": "system-seed",
+      "rating": 4.86,
+      "isOnline": true,
+      "isAvailable": true,
+      "coordinates": {
+        "lat": 12.97577,
+        "lng": 77.63719
+      },
+      "areaName": "Indiranagar 100ft",
+      "ridesCompletedToday": 5,
+      "totalRidesCompleted": 980,
+      "dailyEarnings": 1120,
+      "minutesSinceLastRide": 24,
+      "acceptanceRate": 0.95,
+      "allocationOpportunities": 7,
+      "acceptedCount": 6,
+      "rejectedCount": 1,
+      "timedOutCount": 0,
+      "isSimulatedLocation": true,
+      "lastUpdatedAt": "2026-11-13T19:10:25.858Z",
+      "documents": []
+    },
+    {
+      "id": "drv-107",
+      "name": "Suresh Babu",
+      "vehicleModel": "Maruti Swift",
+      "vehicleTier": "ECO_HATCH",
+      "plateNumber": "KA-05-KL-2094",
+      "vehicleCapacity": 4,
+      "licenseNumber": "KA05-2020-0020941",
+      "licenseExpiry": "2031-12-01",
+      "verificationStatus": "APPROVED",
+      "verifiedAt": "2026-11-13T17:52:02.556Z",
+      "verifiedBy": "system-seed",
+      "rating": 4.79,
+      "isOnline": true,
+      "isAvailable": true,
+      "coordinates": {
+        "lat": 13.03089,
+        "lng": 77.58473
+      },
+      "areaName": "Hebbal Outer Ring",
+      "ridesCompletedToday": 3,
+      "totalRidesCompleted": 730,
+      "dailyEarnings": 580,
+      "minutesSinceLastRide": 37,
+      "acceptanceRate": 0.94,
+      "allocationOpportunities": 5,
+      "acceptedCount": 4,
+      "rejectedCount": 1,
+      "timedOutCount": 0,
+      "isSimulatedLocation": true,
+      "lastUpdatedAt": "2026-11-13T19:10:25.858Z",
+      "documents": []
+    },
+    {
+      "id": "drv-108",
+      "name": "Ananya Rao",
+      "vehicleModel": "BYD Atto 3",
+      "vehicleTier": "POOL_SHARE",
+      "plateNumber": "KA-51-EV-8832",
+      "vehicleCapacity": 5,
+      "licenseNumber": "KA51-2021-0088327",
+      "licenseExpiry": "2033-05-14",
+      "verificationStatus": "APPROVED",
+      "verifiedAt": "2026-11-13T17:52:02.556Z",
+      "verifiedBy": "system-seed",
+      "rating": 4.94,
+      "isOnline": true,
+      "isAvailable": true,
+      "coordinates": {
+        "lat": 12.96839,
+        "lng": 77.7257
+      },
+      "areaName": "Marathahalli Bridge",
+      "ridesCompletedToday": 6,
+      "totalRidesCompleted": 1310,
+      "dailyEarnings": 1490,
+      "minutesSinceLastRide": 19,
+      "acceptanceRate": 0.97,
+      "allocationOpportunities": 8,
+      "acceptedCount": 7,
+      "rejectedCount": 1,
+      "timedOutCount": 0,
+      "isSimulatedLocation": true,
+      "lastUpdatedAt": "2026-11-13T19:10:25.859Z",
+      "documents": []
+    },
+    {
+      "id": "drv-53445-y2",
+      "userId": "user-1794596153445-xpz7m",
+      "name": "SOS Test Driver",
+      "vehicleModel": "Tata Nexon EV Max",
+      "vehicleTier": "EV_COMFORT",
+      "plateNumber": "KA01SOS999",
+      "vehicleCapacity": 4,
+      "licenseNumber": "KA01-2026-SOS999",
+      "licenseExpiry": "2030-12-31",
+      "verificationStatus": "APPROVED",
+      "documents": [],
+      "rating": 4.8,
+      "isOnline": true,
+      "isAvailable": true,
+      "coordinates": {
+        "lat": 12.9716,
+        "lng": 77.5946
+      },
+      "areaName": "MG Road Verification Hub",
+      "ridesCompletedToday": 1,
+      "totalRidesCompleted": 1,
+      "dailyEarnings": 144,
+      "minutesSinceLastRide": 0,
+      "acceptanceRate": 1,
+      "allocationOpportunities": 1,
+      "acceptedCount": 1,
+      "rejectedCount": 0,
+      "timedOutCount": 0,
+      "isSimulatedLocation": false,
+      "lastUpdatedAt": "2026-11-13T18:56:16.566Z",
+      "verifiedAt": "2026-11-13T18:55:53.455Z",
+      "verifiedBy": "verify-admin@ridenexa.test"
+    }
+  ],
+  "rides": [
+    {
+      "id": "BK-MWFC7R21-X8Z",
+      "passengerId": "user-1794596153236-d3qtw",
+      "passengerName": "SOS Passenger One",
+      "vehicleTier": "EV_COMFORT",
+      "pickupAddress": "MG Road Metro Station, Bengaluru",
+      "pickupCoords": {
+        "lat": 12.9756,
+        "lng": 77.6066
+      },
+      "destinationAddress": "Indiranagar 100 Feet Road, Bengaluru",
+      "destinationCoords": {
+        "lat": 12.9784,
+        "lng": 77.6408
+      },
+      "distanceKm": 4.03,
+      "durationMin": 6,
+      "estimatedFare": 144,
+      "estimatedFareBreakdown": {
+        "baseFare": 65,
+        "distanceKm": 4.03,
+        "perKmRate": 16.5,
+        "distanceCharge": 66,
+        "durationMin": 6,
+        "perMinRate": 2.2,
+        "timeCharge": 13,
+        "surgeMultiplier": 1,
+        "surgeCharge": 0,
+        "poolingDiscount": 0,
+        "additionalCharges": 0,
+        "minimumFareApplied": false,
+        "subtotal": 144,
+        "totalFare": 144,
+        "currency": "INR",
+        "distanceSource": "ROUTE_BASED_ESTIMATE",
+        "durationSource": "ROUTE_BASED_ESTIMATE",
+        "pricingNote": "Route-based estimate from pickup-to-destination corridor distance and projected travel time."
+      },
+      "pooledDiscountFare": 104,
+      "poolingOptIn": false,
+      "surgeMultiplier": 1,
+      "surgeDisclosure": "Standard base fare (1.00x) in MG Road Transit Hub · balanced fleet supply.",
+      "routeSolverType": "EXTERNAL_ROUTING",
+      "status": "COMPLETED",
+      "allocationStatus": "DRIVER_ASSIGNED",
+      "searchStage": "ASSIGNED",
+      "paymentMethod": "UPI",
+      "paymentStatus": "PAID",
+      "excludedDriverIds": [],
+      "allocationAttempts": 1,
+      "reassignmentCount": 0,
+      "rejectedDriverCount": 0,
+      "timedOutDriverCount": 0,
+      "routePath": [
+        [
+          12.975523,
+          77.60658
+        ],
+        [
+          12.972683,
+          77.618684
+        ],
+        [
+          12.972714,
+          77.620374
+        ],
+        [
+          12.973237,
+          77.622252
+        ],
+        [
+          12.975304,
+          77.625694
+        ],
+        [
+          12.977468,
+          77.627275
+        ],
+        [
+          12.977976,
+          77.628238
+        ],
+        [
+          12.978425,
+          77.628659
+        ],
+        [
+          12.978193,
+          77.632898
+        ],
+        [
+          12.97834,
+          77.640917
+        ],
+        [
+          12.978401,
+          77.640814
+        ]
+      ],
+      "requestedAt": "2026-11-13T18:55:54.553Z",
+      "confirmedAt": "2026-11-13T18:55:54.553Z",
+      "searchStartedAt": "2026-11-13T18:55:54.553Z",
+      "lastSearchAt": "2026-11-13T18:55:54.556Z",
+      "waitDeadlineAt": "2026-11-13T18:58:54.553Z",
+      "isSimulatedDemo": false,
+      "isDemoScenario": false,
+      "allocationReason": "Selected SOS Test Driver (88.9 pts) over nearest driver Arjun Nair (1.6 km, 4m ETA). Although Arjun Nair is 1 min closer, they already completed 9 trips (11 opportunities) with only 8m idle. SOS Test Driver had 0 trips (0 opportunities) and waited 30m, achieving a fair 4-min pickup.",
+      "allocationScore": 88.9,
+      "driverId": "drv-53445-y2",
+      "driverName": "SOS Test Driver",
+      "driverPhone": "+91-9800••••003",
+      "driverRating": 4.8,
+      "driverEtaMin": 4,
+      "vehicleModel": "Tata Nexon EV Max",
+      "plateNumber": "KA01SOS999",
+      "assignedAt": "2026-11-13T18:55:54.581Z",
+      "startedAt": "2026-11-13T18:55:54.589Z",
+      "completedAt": "2026-11-13T18:56:16.538Z",
+      "actualDistanceKm": 4.03,
+      "actualDurationMin": 6,
+      "finalFare": 144,
+      "finalFareBreakdown": {
+        "baseFare": 65,
+        "distanceKm": 4.03,
+        "perKmRate": 16.5,
+        "distanceCharge": 66,
+        "durationMin": 6,
+        "perMinRate": 2.2,
+        "timeCharge": 13,
+        "surgeMultiplier": 1,
+        "surgeCharge": 0,
+        "poolingDiscount": 0,
+        "additionalCharges": 0,
+        "minimumFareApplied": false,
+        "subtotal": 144,
+        "totalFare": 144,
+        "currency": "INR",
+        "distanceSource": "ROUTE_BASED_ESTIMATE",
+        "durationSource": "ROUTE_BASED_ESTIMATE",
+        "pricingNote": "Route-based estimate from pickup-to-destination corridor distance and projected travel time."
+      },
+      "paymentId": "PAY-MWFC880S-O8O",
+      "paymentReference": "TXN-RN-MWFC881H-30Y"
+    },
+    {
+      "id": "ride-demo-901",
+      "passengerId": "user-passenger-demo",
+      "passengerName": "Aarav Sharma",
+      "driverId": "drv-101",
+      "driverName": "Arjun Nair",
+      "vehicleModel": "Tata Nexon EV",
+      "plateNumber": "KA-01-EV-4821",
+      "vehicleTier": "EV_COMFORT",
+      "pickupAddress": "MG Road Transit Hub",
+      "pickupCoords": {
+        "lat": 12.9756,
+        "lng": 77.6066
+      },
+      "destinationAddress": "Indiranagar 100ft Metro",
+      "destinationCoords": {
+        "lat": 12.9784,
+        "lng": 77.6408
+      },
+      "distanceKm": 4.2,
+      "durationMin": 14,
+      "estimatedFare": 168,
+      "status": "COMPLETED",
+      "allocationReason": "Balanced pickup ETA (4 min) with fair daily workload distribution.",
+      "allocationScore": 89.4,
+      "routePath": [
+        [
+          12.9756,
+          77.6066
+        ],
+        [
+          12.9769,
+          77.6215
+        ],
+        [
+          12.9784,
+          77.6408
+        ]
+      ],
+      "requestedAt": "2026-11-13T15:32:02.556Z",
+      "assignedAt": "2026-11-13T15:34:02.556Z",
+      "completedAt": "2026-11-13T15:50:02.556Z",
+      "isSimulatedDemo": true
+    },
+    {
+      "id": "ride-demo-902",
+      "passengerId": "user-passenger-demo",
+      "passengerName": "Aarav Sharma",
+      "driverId": "drv-102",
+      "driverName": "Meera Kulkarni",
+      "vehicleModel": "MG ZS EV",
+      "plateNumber": "KA-03-EV-9012",
+      "vehicleTier": "EV_COMFORT",
+      "pickupAddress": "Koramangala 4th Block",
+      "pickupCoords": {
+        "lat": 12.9352,
+        "lng": 77.6245
+      },
+      "destinationAddress": "Whitefield Tech Corridor",
+      "destinationCoords": {
+        "lat": 12.9698,
+        "lng": 77.7499
+      },
+      "distanceKm": 14.8,
+      "durationMin": 36,
+      "estimatedFare": 412,
+      "pooledDiscountFare": 284,
+      "status": "COMPLETED",
+      "allocationReason": "Prioritized idle-time equity (42 min wait) within 1.4 km radius.",
+      "allocationScore": 92.1,
+      "routePath": [
+        [
+          12.9352,
+          77.6245
+        ],
+        [
+          12.9562,
+          77.6942
+        ],
+        [
+          12.9698,
+          77.7499
+        ]
+      ],
+      "requestedAt": "2026-11-13T12:32:02.556Z",
+      "assignedAt": "2026-11-13T12:34:02.556Z",
+      "completedAt": "2026-11-13T13:12:02.556Z",
+      "isSimulatedDemo": true
+    },
+    {
+      "id": "ride-demo-903",
+      "passengerId": "pass-sim-2",
+      "passengerName": "Neha Verma",
+      "driverId": "drv-106",
+      "driverName": "Rohan Deshmukh",
+      "vehicleModel": "Toyota Innova Hycross",
+      "plateNumber": "KA-01-MP-6520",
+      "vehicleTier": "POOL_SHARE",
+      "pickupAddress": "Indiranagar 100ft Metro",
+      "pickupCoords": {
+        "lat": 12.9784,
+        "lng": 77.6408
+      },
+      "destinationAddress": "Hebbal Outer Ring Interchange",
+      "destinationCoords": {
+        "lat": 13.0358,
+        "lng": 77.597
+      },
+      "distanceKm": 9.6,
+      "durationMin": 24,
+      "estimatedFare": 295,
+      "pooledDiscountFare": 204,
+      "status": "COMPLETED",
+      "allocationReason": "High route compatibility for pooled corridor.",
+      "allocationScore": 87.8,
+      "routePath": [
+        [
+          12.9784,
+          77.6408
+        ],
+        [
+          13.0085,
+          77.6194
+        ],
+        [
+          13.0358,
+          77.597
+        ]
+      ],
+      "requestedAt": "2026-11-13T14:22:02.556Z",
+      "assignedAt": "2026-11-13T14:24:02.556Z",
+      "completedAt": "2026-11-13T14:50:02.556Z",
+      "isSimulatedDemo": true
+    },
+    {
+      "id": "ride-demo-904",
+      "passengerId": "pass-sim-3",
+      "passengerName": "Vikram Patel",
+      "driverId": "drv-105",
+      "driverName": "Priya Menon",
+      "vehicleModel": "Tata Tiago EV",
+      "plateNumber": "KA-04-EV-1193",
+      "vehicleTier": "ECO_HATCH",
+      "pickupAddress": "Jayanagar 4th Block Square",
+      "pickupCoords": {
+        "lat": 12.925,
+        "lng": 77.5938
+      },
+      "destinationAddress": "MG Road Transit Hub",
+      "destinationCoords": {
+        "lat": 12.9756,
+        "lng": 77.6066
+      },
+      "distanceKm": 6.1,
+      "durationMin": 18,
+      "estimatedFare": 158,
+      "status": "COMPLETED",
+      "allocationReason": "Lowest daily workload in Jayanagar sector with 4.95 rating.",
+      "allocationScore": 94,
+      "routePath": [
+        [
+          12.925,
+          77.5938
+        ],
+        [
+          12.9502,
+          77.5998
+        ],
+        [
+          12.9756,
+          77.6066
+        ]
+      ],
+      "requestedAt": "2026-11-13T16:17:02.556Z",
+      "assignedAt": "2026-11-13T16:18:02.556Z",
+      "completedAt": "2026-11-13T16:38:02.556Z",
+      "isSimulatedDemo": true
+    },
+    {
+      "id": "ride-demo-905",
+      "passengerId": "pass-sim-4",
+      "passengerName": "Divya Krishnan",
+      "vehicleTier": "CITY_SEDAN",
+      "pickupAddress": "Koramangala 4th Block",
+      "pickupCoords": {
+        "lat": 12.9352,
+        "lng": 77.6245
+      },
+      "destinationAddress": "Electronic City Phase 1",
+      "destinationCoords": {
+        "lat": 12.8452,
+        "lng": 77.6602
+      },
+      "distanceKm": 11.4,
+      "durationMin": 27,
+      "estimatedFare": 318,
+      "status": "REQUESTED",
+      "routePath": [
+        [
+          12.9352,
+          77.6245
+        ],
+        [
+          12.891,
+          77.6415
+        ],
+        [
+          12.8452,
+          77.6602
+        ]
+      ],
+      "requestedAt": "2026-11-13T17:49:02.556Z",
+      "isSimulatedDemo": true
+    }
+  ],
+  "payments": [
+    {
+      "id": "PAY-MWFC880S-O8O",
+      "rideId": "BK-MWFC7R21-X8Z",
+      "bookingId": "BK-MWFC7R21-X8Z",
+      "passengerId": "user-1794596153236-d3qtw",
+      "driverId": "drv-53445-y2",
+      "estimatedFare": 144,
+      "finalFare": 144,
+      "amount": 144,
+      "currency": "INR",
+      "paymentMethod": "UPI",
+      "method": "UPI",
+      "paymentStatus": "PAID",
+      "status": "PAID",
+      "transactionReference": "TXN-RN-MWFC881H-30Y",
+      "gatewayMode": "SANDBOX_DEMO",
+      "fareBreakdown": {
+        "baseFare": 65,
+        "distanceKm": 4.03,
+        "perKmRate": 16.5,
+        "distanceCharge": 66,
+        "durationMin": 6,
+        "perMinRate": 2.2,
+        "timeCharge": 13,
+        "surgeMultiplier": 1,
+        "surgeCharge": 0,
+        "poolingDiscount": 0,
+        "additionalCharges": 0,
+        "minimumFareApplied": false,
+        "subtotal": 144,
+        "totalFare": 144,
+        "currency": "INR",
+        "distanceSource": "ROUTE_BASED_ESTIMATE",
+        "durationSource": "ROUTE_BASED_ESTIMATE",
+        "pricingNote": "Route-based estimate from pickup-to-destination corridor distance and projected travel time."
+      },
+      "createdAt": "2026-11-13T18:56:16.538Z",
+      "updatedAt": "2026-11-13T18:56:16.565Z",
+      "transactionId": "TXN-RN-MWFC881H-30Y",
+      "gatewayOrderId": "order_sbx_mwfc8816_xj1j",
+      "accountLabel": "UPI Checkout",
+      "gatewayPaymentId": "pay_sbx_mwfc8816_qzuk",
+      "gatewayReference": "pay_sbx_mwfc8816_qzuk",
+      "paidAt": "2026-11-13T18:56:16.565Z"
+    }
+  ],
+  "driverRequests": [
+    {
+      "id": "dreq-mwfc7r27-u364",
+      "bookingId": "BK-MWFC7R21-X8Z",
+      "driverId": "drv-53445-y2",
+      "driverUserId": "user-1794596153445-xpz7m",
+      "driverName": "SOS Test Driver",
+      "passengerId": "user-1794596153236-d3qtw",
+      "passengerName": "SOS Passenger One",
+      "pickupAddress": "MG Road Metro Station, Bengaluru",
+      "pickupCoords": {
+        "lat": 12.9756,
+        "lng": 77.6066
+      },
+      "destinationAddress": "Indiranagar 100 Feet Road, Bengaluru",
+      "destinationCoords": {
+        "lat": 12.9784,
+        "lng": 77.6408
+      },
+      "distanceKm": 4.03,
+      "durationMin": 6,
+      "estimatedFare": 144,
+      "driverEarnings": 115,
+      "vehicleTier": "EV_COMFORT",
+      "attemptNumber": 1,
+      "allocationScore": 88.9,
+      "allocationReason": "Selected SOS Test Driver (88.9 pts) over nearest driver Arjun Nair (1.6 km, 4m ETA). Although Arjun Nair is 1 min closer, they already completed 9 trips (11 opportunities) with only 8m idle. SOS Test Driver had 0 trips (0 opportunities) and waited 30m, achieving a fair 4-min pickup.",
+      "status": "ACCEPTED",
+      "expiresAt": "2026-11-13T18:56:14.556Z",
+      "createdAt": "2026-11-13T18:55:54.556Z",
+      "isDemoScenario": false,
+      "respondedAt": "2026-11-13T18:55:54.581Z"
+    }
+  ],
+  "rideEvents": [
+    {
+      "id": "evt-mwfc881l-3zv2",
+      "bookingId": "BK-MWFC7R21-X8Z",
+      "eventType": "PAYMENT_VERIFIED",
+      "actorId": "user-1794596153236-d3qtw",
+      "actorRole": "PASSENGER",
+      "status": "PAID",
+      "message": "Verified ₹144 UPI payment (SANDBOX_DEMO). Transaction ID: TXN-RN-MWFC881H-30Y.",
+      "metadata": {
+        "paymentId": "PAY-MWFC880S-O8O",
+        "transactionId": "TXN-RN-MWFC881H-30Y",
+        "gatewayOrderId": "order_sbx_mwfc8816_xj1j",
+        "gatewayPaymentId": "pay_sbx_mwfc8816_qzuk",
+        "amount": 144
+      },
+      "isDemoScenario": false,
+      "timestamp": "2026-11-13T18:56:16.569Z"
+    },
+    {
+      "id": "evt-mwfc8818-m5mo",
+      "bookingId": "BK-MWFC7R21-X8Z",
+      "eventType": "PAYMENT_PROCESSING",
+      "actorId": "user-1794596153236-d3qtw",
+      "actorRole": "PASSENGER",
+      "status": "PROCESSING",
+      "message": "Passenger initiated UPI payment of ₹144 (SANDBOX_DEMO, Order: order_sbx_mwfc8816_xj1j).",
+      "metadata": {
+        "paymentId": "PAY-MWFC880S-O8O",
+        "gatewayOrderId": "order_sbx_mwfc8816_xj1j",
+        "gatewayMode": "SANDBOX_DEMO",
+        "amount": 144
+      },
+      "isDemoScenario": false,
+      "timestamp": "2026-11-13T18:56:16.556Z"
+    },
+    {
+      "id": "evt-mwfc880w-n1c6",
+      "bookingId": "BK-MWFC7R21-X8Z",
+      "eventType": "RIDE_COMPLETED",
+      "actorId": "user-1794596153445-xpz7m",
+      "actorRole": "DRIVER",
+      "status": "COMPLETED",
+      "message": "Ride completed. Final fare: ₹144 (UPI, Payment: PENDING).",
+      "metadata": {
+        "finalFare": 144,
+        "paymentId": "PAY-MWFC880S-O8O",
+        "paymentStatus": "PENDING"
+      },
+      "isDemoScenario": false,
+      "timestamp": "2026-11-13T18:56:16.544Z"
+    },
+    {
+      "id": "evt-mwfc880u-5bvy",
+      "bookingId": "BK-MWFC7R21-X8Z",
+      "eventType": "PAYMENT_CREATED",
+      "actorId": "user-1794596153445-xpz7m",
+      "actorRole": "DRIVER",
+      "status": "PENDING",
+      "message": "Ride completed. Final fare calculated at ₹144 (UPI). Payment status set to PENDING.",
+      "metadata": {
+        "paymentId": "PAY-MWFC880S-O8O",
+        "estimatedFare": 144,
+        "finalFare": 144,
+        "paymentMethod": "UPI",
+        "distanceSource": "ROUTE_BASED_ESTIMATE",
+        "durationSource": "ROUTE_BASED_ESTIMATE"
+      },
+      "isDemoScenario": false,
+      "timestamp": "2026-11-13T18:56:16.542Z"
+    },
+    {
+      "id": "evt-mwfc7r31-irsb",
+      "bookingId": "BK-MWFC7R21-X8Z",
+      "eventType": "BOOKING_STATUS_UPDATED",
+      "actorId": "user-1794596153445-xpz7m",
+      "actorRole": "DRIVER",
+      "status": "TRIP_STARTED",
+      "message": "Trip status transitioned from DRIVER_ASSIGNED to TRIP_STARTED.",
+      "isDemoScenario": false,
+      "timestamp": "2026-11-13T18:55:54.589Z"
+    },
+    {
+      "id": "evt-mwfc7r2v-iri9",
+      "bookingId": "BK-MWFC7R21-X8Z",
+      "eventType": "DRIVER_ACCEPTED",
+      "actorId": "user-1794596153445-xpz7m",
+      "actorRole": "DRIVER",
+      "status": "DRIVER_ASSIGNED",
+      "message": "SOS Test Driver (Tata Nexon EV Max, KA01SOS999) accepted booking BK-MWFC7R21-X8Z. ETA 4 min.",
+      "metadata": {
+        "requestId": "dreq-mwfc7r27-u364",
+        "driverId": "drv-53445-y2",
+        "attemptNumber": 1
+      },
+      "isDemoScenario": false,
+      "timestamp": "2026-11-13T18:55:54.583Z"
+    },
+    {
+      "id": "evt-mwfc7r29-zwfr",
+      "bookingId": "BK-MWFC7R21-X8Z",
+      "eventType": "DRIVER_REQUEST_SENT",
+      "actorId": "SYSTEM",
+      "actorRole": "SYSTEM",
+      "status": "SEARCHING_DRIVER",
+      "message": "Attempt #1: dispatched to SOS Test Driver (Score 88.9).",
+      "metadata": {
+        "requestId": "dreq-mwfc7r27-u364",
+        "driverId": "drv-53445-y2",
+        "attemptNumber": 1,
+        "triggerReason": "BOOKING_CONFIRMED",
+        "timeoutSec": 20
+      },
+      "isDemoScenario": false,
+      "timestamp": "2026-11-13T18:55:54.561Z"
+    },
+    {
+      "id": "evt-mwfc7r21-ddgt",
+      "bookingId": "BK-MWFC7R21-X8Z",
+      "eventType": "BOOKING_CREATED",
+      "actorId": "user-1794596153236-d3qtw",
+      "actorRole": "PASSENGER",
+      "status": "SEARCHING_DRIVER",
+      "message": "Booking BK-MWFC7R21-X8Z confirmed with estimated fare ₹144 (UPI, Payment: Pending until ride completion). Dispatching fair driver allocation.",
+      "metadata": {
+        "paymentMethod": "UPI",
+        "paymentStatus": "PENDING",
+        "estimatedFare": 144,
+        "vehicleTier": "EV_COMFORT",
+        "surgeMultiplier": 1,
+        "poolingOptIn": false
+      },
+      "isDemoScenario": false,
+      "timestamp": "2026-11-13T18:55:54.553Z"
+    }
+  ],
+  "locationHistory": [
+    {
+      "id": "loc-mwfc7q7p-e0n",
+      "driverId": "drv-53445-y2",
+      "coordinates": {
+        "lat": 12.9716,
+        "lng": 77.5946
+      },
+      "areaName": "MG Road Verification Hub",
+      "isSimulatedLocation": false,
+      "timestamp": "2026-11-13T18:55:53.461Z"
+    }
+  ],
+  "contacts": [],
+  "allocationRankings": [
+    {
+      "id": "rank-mwfc7r26-sj4",
+      "bookingId": "BK-MWFC7R21-X8Z",
+      "attemptNumber": 1,
+      "triggerReason": "BOOKING_CONFIRMED",
+      "pickup": {
+        "lat": 12.9756,
+        "lng": 77.6066
+      },
+      "weightsUsed": {
+        "eta": 0.4,
+        "fairness": 0.3,
+        "reliability": 0.15,
+        "workload": 0.15
+      },
+      "totalFleetCount": 9,
+      "eligibleCount": 3,
+      "excludedCount": 0,
+      "selectedDriverId": "drv-53445-y2",
+      "selectedDriverName": "SOS Test Driver",
+      "greedyDriverId": "drv-101",
+      "greedyDriverName": "Arjun Nair",
+      "greedyEtaMin": 4,
+      "candidates": [
+        {
+          "driverId": "drv-53445-y2",
+          "driverName": "SOS Test Driver",
+          "vehicleModel": "Tata Nexon EV Max",
+          "vehicleTier": "EV_COMFORT",
+          "areaName": "MG Road Verification Hub",
+          "coordinates": {
+            "lat": 12.9716,
+            "lng": 77.5946
+          },
+          "distanceKm": 1.68,
+          "etaMinutes": 4,
+          "ridesCompletedToday": 0,
+          "minutesSinceLastRide": 30,
+          "rating": 4.8,
+          "acceptanceRate": 0.95,
+          "allocationOpportunities": 0,
+          "acceptedCount": 0,
+          "rejectedCount": 0,
+          "proximityScore": 86,
+          "workloadEquityScore": 100,
+          "idleWaitScore": 77.1,
+          "reliabilityScore": 89.3,
+          "fairnessOpportunityScore": 87.1,
+          "totalAllocationScore": 88.9,
+          "isSelected": true,
+          "isNearestGreedy": false
+        },
+        {
+          "driverId": "drv-102",
+          "driverName": "Meera Kulkarni",
+          "vehicleModel": "MG ZS EV",
+          "vehicleTier": "EV_COMFORT",
+          "areaName": "Richmond Circle",
+          "coordinates": {
+            "lat": 12.96245,
+            "lng": 77.61951
+          },
+          "distanceKm": 2.47,
+          "etaMinutes": 6,
+          "ridesCompletedToday": 3,
+          "minutesSinceLastRide": 42,
+          "rating": 4.88,
+          "acceptanceRate": 0.98,
+          "allocationOpportunities": 4,
+          "acceptedCount": 4,
+          "rejectedCount": 0,
+          "proximityScore": 79,
+          "workloadEquityScore": 71.7,
+          "idleWaitScore": 100,
+          "reliabilityScore": 95,
+          "fairnessOpportunityScore": 89.1,
+          "totalAllocationScore": 83.3,
+          "isSelected": false,
+          "isNearestGreedy": false
+        },
+        {
+          "driverId": "drv-101",
+          "driverName": "Arjun Nair",
+          "vehicleModel": "Tata Nexon EV",
+          "vehicleTier": "EV_COMFORT",
+          "areaName": "MG Road Transit Hub",
+          "coordinates": {
+            "lat": 12.9855,
+            "lng": 77.59997
+          },
+          "distanceKm": 1.6,
+          "etaMinutes": 4,
+          "ridesCompletedToday": 9,
+          "minutesSinceLastRide": 8,
+          "rating": 4.92,
+          "acceptanceRate": 0.96,
+          "allocationOpportunities": 11,
+          "acceptedCount": 10,
+          "rejectedCount": 1,
+          "proximityScore": 86.1,
+          "workloadEquityScore": 15,
+          "idleWaitScore": 35.2,
+          "reliabilityScore": 95.3,
+          "fairnessOpportunityScore": 33.6,
+          "totalAllocationScore": 61.1,
+          "isSelected": false,
+          "isNearestGreedy": true
+        }
+      ],
+      "explanation": "Selected SOS Test Driver (88.9 pts) over nearest driver Arjun Nair (1.6 km, 4m ETA). Although Arjun Nair is 1 min closer, they already completed 9 trips (11 opportunities) with only 8m idle. SOS Test Driver had 0 trips (0 opportunities) and waited 30m, achieving a fair 4-min pickup.",
+      "createdAt": "2026-11-13T18:55:54.556Z",
+      "isDemoScenario": false
+    }
+  ],
+  "emergencyIncidents": [
+    {
+      "incidentId": "SOS-MWFC881R-QL7",
+      "activatedBy": "user-1794596153236-d3qtw",
+      "activatedByRole": "PASSENGER",
+      "activatedByName": "SOS Passenger One",
+      "passengerId": "user-1794596153236-d3qtw",
+      "passengerName": "SOS Passenger One",
+      "passengerPhone": "+91-9800000001",
+      "passengerEmail": "sos-p1@ridenexa.test",
+      "emergencyCategory": "MEDICAL",
+      "emergencyDescription": "Persistence check across restart",
+      "latitude": 12.9716,
+      "longitude": 77.5946,
+      "locationTimestamp": "2026-11-13T18:56:16.575Z",
+      "locationSource": "LIVE_GPS",
+      "locationVerifiedCurrent": true,
+      "nearestPoliceStations": [],
+      "policeLookupStatus": "PROVIDER_UNAVAILABLE",
+      "policeNotificationStatus": "NOT_CONFIGURED",
+      "adminNotificationStatus": "NOTIFIED",
+      "incidentStatus": "AWAITING_EMERGENCY_RESPONSE",
+      "emergencyNumber": "112",
+      "emergencyCountry": "IN",
+      "isDemoScenario": false,
+      "notes": [],
+      "events": [
+        {
+          "id": "sosevt-mwfc8b4z-g6yh",
+          "incidentId": "SOS-MWFC881R-QL7",
+          "eventType": "POLICE_DISPATCH_CHECK",
+          "actorId": "system",
+          "actorRole": "SYSTEM",
+          "message": "Official police emergency dispatch API is not configured (POLICE_EMERGENCY_API_URL unset). Use Call 112 or share coordinates with emergency responders directly.",
+          "metadata": {
+            "policeNotificationStatus": "NOT_CONFIGURED"
+          },
+          "timestamp": "2026-11-13T18:56:20.579Z"
+        },
+        {
+          "id": "sosevt-mwfc881r-cl1f",
+          "incidentId": "SOS-MWFC881R-QL7",
+          "eventType": "ADMIN_NOTIFIED",
+          "actorId": "system",
+          "actorRole": "SYSTEM",
+          "message": "RideNexa Operations Command notified immediately in real time via Socket.IO.",
+          "timestamp": "2026-11-13T18:56:16.575Z"
+        },
+        {
+          "id": "sosevt-mwfc881r-hwru",
+          "incidentId": "SOS-MWFC881R-QL7",
+          "eventType": "LOCATION_CAPTURED",
+          "actorId": "user-1794596153236-d3qtw",
+          "actorRole": "PASSENGER",
+          "message": "Live browser GPS coordinates captured (12.9716, 77.5946).",
+          "metadata": {
+            "locationSource": "LIVE_GPS",
+            "locationVerifiedCurrent": true
+          },
+          "timestamp": "2026-11-13T18:56:16.575Z"
+        },
+        {
+          "id": "sosevt-mwfc881r-5ocr",
+          "incidentId": "SOS-MWFC881R-QL7",
+          "eventType": "SOS_ACTIVATED",
+          "actorId": "user-1794596153236-d3qtw",
+          "actorRole": "PASSENGER",
+          "message": "PASSENGER SOS Passenger One activated Emergency SOS (MEDICAL).",
+          "timestamp": "2026-11-13T18:56:16.575Z"
+        }
+      ],
+      "adminAccessLog": [],
+      "createdAt": "2026-11-13T18:56:16.575Z",
+      "updatedAt": "2026-11-13T18:56:20.579Z",
+      "readableAddress": "Vittal Mallya Road, D'Souza Layout, Shanthala Nagar, Ashokanagar, Bengaluru Central City Corporation, Bengaluru, Bangalore North, Bengaluru Urban, Karnataka, 560001, India",
+      "policeLookupNote": "Police station directory lookup is temporarily unavailable. Dial 112 directly for immediate emergency help.",
+      "policeLastCheckedAt": "2026-11-13T18:56:20.579Z"
+    },
+    {
+      "incidentId": "SOS-MWFC7UPF-D7J",
+      "rideId": "BK-MWFC7R21-X8Z",
+      "activatedBy": "user-1794596153445-xpz7m",
+      "activatedByRole": "DRIVER",
+      "activatedByName": "SOS Test Driver",
+      "passengerId": "user-1794596153236-d3qtw",
+      "passengerName": "SOS Passenger One",
+      "passengerPhone": "+91-9800000001",
+      "passengerEmail": "sos-p1@ridenexa.test",
+      "driverId": "drv-53445-y2",
+      "driverName": "SOS Test Driver",
+      "driverPhone": "+91-9800••••003",
+      "vehicleId": "drv-53445-y2",
+      "vehicleRegistrationNumber": "KA01SOS999",
+      "vehicleModel": "Tata Nexon EV Max",
+      "vehicleTier": "EV_COMFORT",
+      "pickupAddress": "MG Road Metro Station, Bengaluru",
+      "pickupCoords": {
+        "lat": 12.9756,
+        "lng": 77.6066
+      },
+      "destinationAddress": "Indiranagar 100 Feet Road, Bengaluru",
+      "destinationCoords": {
+        "lat": 12.9784,
+        "lng": 77.6408
+      },
+      "rideStatusAtActivation": "TRIP_STARTED",
+      "routePath": [
+        [
+          12.975523,
+          77.60658
+        ],
+        [
+          12.972683,
+          77.618684
+        ],
+        [
+          12.972714,
+          77.620374
+        ],
+        [
+          12.973237,
+          77.622252
+        ],
+        [
+          12.975304,
+          77.625694
+        ],
+        [
+          12.977468,
+          77.627275
+        ],
+        [
+          12.977976,
+          77.628238
+        ],
+        [
+          12.978425,
+          77.628659
+        ],
+        [
+          12.978193,
+          77.632898
+        ],
+        [
+          12.97834,
+          77.640917
+        ],
+        [
+          12.978401,
+          77.640814
+        ]
+      ],
+      "emergencyCategory": "THREAT",
+      "latitude": 12.9735,
+      "longitude": 77.619,
+      "locationAccuracy": 10,
+      "locationTimestamp": "2026-11-13T18:56:11.325Z",
+      "locationSource": "LIVE_GPS",
+      "locationVerifiedCurrent": true,
+      "manualLocationText": "Near Trinity Circle signal",
+      "nearestPoliceStations": [],
+      "policeLookupStatus": "PROVIDER_UNAVAILABLE",
+      "policeNotificationStatus": "NOT_CONFIGURED",
+      "adminNotificationStatus": "NOTIFIED",
+      "incidentStatus": "CANCELLED_ACCIDENTAL",
+      "emergencyNumber": "112",
+      "emergencyCountry": "IN",
+      "isDemoScenario": false,
+      "notes": [],
+      "events": [
+        {
+          "id": "sosevt-mwfc8405-6kbw",
+          "incidentId": "SOS-MWFC7UPF-D7J",
+          "eventType": "CANCELLED_ACCIDENTAL",
+          "actorId": "user-1794596153445-xpz7m",
+          "actorRole": "DRIVER",
+          "message": "Incident marked as accidental cancellation (\"Pressed button by mistake\"). Original record preserved for audit.",
+          "timestamp": "2026-11-13T18:56:11.333Z"
+        },
+        {
+          "id": "sosevt-mwfc83zx-w4x4",
+          "incidentId": "SOS-MWFC7UPF-D7J",
+          "eventType": "LOCATION_UPDATED",
+          "actorId": "user-1794596153445-xpz7m",
+          "actorRole": "DRIVER",
+          "message": "Updated live GPS coordinates (12.9735, 77.619).",
+          "timestamp": "2026-11-13T18:56:11.325Z"
+        },
+        {
+          "id": "sosevt-mwfc80w1-vu4j",
+          "incidentId": "SOS-MWFC7UPF-D7J",
+          "eventType": "LOCATION_UPDATED",
+          "actorId": "user-1794596153445-xpz7m",
+          "actorRole": "DRIVER",
+          "message": "Updated manual location description: \"Near Trinity Circle signal\".",
+          "timestamp": "2026-11-13T18:56:07.297Z"
+        },
+        {
+          "id": "sosevt-mwfc7xso-bxml",
+          "incidentId": "SOS-MWFC7UPF-D7J",
+          "eventType": "POLICE_DISPATCH_CHECK",
+          "actorId": "system",
+          "actorRole": "SYSTEM",
+          "message": "Official police emergency dispatch API is not configured (POLICE_EMERGENCY_API_URL unset). Use Call 112 or share coordinates with emergency responders directly.",
+          "metadata": {
+            "policeNotificationStatus": "NOT_CONFIGURED"
+          },
+          "timestamp": "2026-11-13T18:56:03.288Z"
+        },
+        {
+          "id": "sosevt-mwfc7upf-8n4a",
+          "incidentId": "SOS-MWFC7UPF-D7J",
+          "eventType": "ADMIN_NOTIFIED",
+          "actorId": "system",
+          "actorRole": "SYSTEM",
+          "message": "RideNexa Operations Command notified immediately in real time via Socket.IO.",
+          "timestamp": "2026-11-13T18:55:59.283Z"
+        },
+        {
+          "id": "sosevt-mwfc7upf-0u8n",
+          "incidentId": "SOS-MWFC7UPF-D7J",
+          "eventType": "LOCATION_CAPTURED",
+          "actorId": "user-1794596153445-xpz7m",
+          "actorRole": "DRIVER",
+          "message": "Browser GPS unavailable; fell back to unverified last-known backend coordinates (12.9716, 77.5946).",
+          "metadata": {
+            "locationSource": "LAST_KNOWN_BACKEND",
+            "locationVerifiedCurrent": false
+          },
+          "timestamp": "2026-11-13T18:55:59.283Z"
+        },
+        {
+          "id": "sosevt-mwfc7upf-bux6",
+          "incidentId": "SOS-MWFC7UPF-D7J",
+          "eventType": "SOS_ACTIVATED",
+          "actorId": "user-1794596153445-xpz7m",
+          "actorRole": "DRIVER",
+          "message": "DRIVER SOS Test Driver activated Emergency SOS on ride BK-MWFC7R21-X8Z (THREAT).",
+          "timestamp": "2026-11-13T18:55:59.283Z"
+        }
+      ],
+      "adminAccessLog": [],
+      "createdAt": "2026-11-13T18:55:59.283Z",
+      "updatedAt": "2026-11-13T18:56:11.333Z",
+      "readableAddress": "Mahatma Gandhi Road, Hanumanthappa Layout, K Kamaraj Ward, Bengaluru Central City Corporation, Bengaluru, Bangalore North, Bengaluru Urban, Karnataka, 560042, India",
+      "policeLookupNote": "Police station directory lookup is temporarily unavailable. Dial 112 directly for immediate emergency help.",
+      "policeLastCheckedAt": "2026-11-13T18:56:03.288Z",
+      "accidentalCancellationReason": "Pressed button by mistake",
+      "resolvedAt": "2026-11-13T18:56:11.333Z"
+    },
+    {
+      "incidentId": "SOS-MWFC7R38-5C1",
+      "rideId": "BK-MWFC7R21-X8Z",
+      "activatedBy": "user-1794596153236-d3qtw",
+      "activatedByRole": "PASSENGER",
+      "activatedByName": "SOS Passenger One",
+      "passengerId": "user-1794596153236-d3qtw",
+      "passengerName": "SOS Passenger One",
+      "passengerPhone": "+91-9800000001",
+      "passengerEmail": "sos-p1@ridenexa.test",
+      "driverId": "drv-53445-y2",
+      "driverName": "SOS Test Driver",
+      "driverPhone": "+91-9800••••003",
+      "vehicleId": "drv-53445-y2",
+      "vehicleRegistrationNumber": "KA01SOS999",
+      "vehicleModel": "Tata Nexon EV Max",
+      "vehicleTier": "EV_COMFORT",
+      "pickupAddress": "MG Road Metro Station, Bengaluru",
+      "pickupCoords": {
+        "lat": 12.9756,
+        "lng": 77.6066
+      },
+      "destinationAddress": "Indiranagar 100 Feet Road, Bengaluru",
+      "destinationCoords": {
+        "lat": 12.9784,
+        "lng": 77.6408
+      },
+      "rideStatusAtActivation": "TRIP_STARTED",
+      "routePath": [
+        [
+          12.975523,
+          77.60658
+        ],
+        [
+          12.972683,
+          77.618684
+        ],
+        [
+          12.972714,
+          77.620374
+        ],
+        [
+          12.973237,
+          77.622252
+        ],
+        [
+          12.975304,
+          77.625694
+        ],
+        [
+          12.977468,
+          77.627275
+        ],
+        [
+          12.977976,
+          77.628238
+        ],
+        [
+          12.978425,
+          77.628659
+        ],
+        [
+          12.978193,
+          77.632898
+        ],
+        [
+          12.97834,
+          77.640917
+        ],
+        [
+          12.978401,
+          77.640814
+        ]
+      ],
+      "emergencyCategory": "HARASSMENT",
+      "emergencyDescription": "Driver acting aggressively during ride",
+      "latitude": 12.9756,
+      "longitude": 77.6066,
+      "locationAccuracy": 14,
+      "locationTimestamp": "2026-11-13T18:55:54.596Z",
+      "locationSource": "LIVE_GPS",
+      "locationVerifiedCurrent": true,
+      "nearestPoliceStations": [],
+      "policeLookupStatus": "PROVIDER_UNAVAILABLE",
+      "policeNotificationStatus": "NOT_CONFIGURED",
+      "adminNotificationStatus": "ACKNOWLEDGED",
+      "incidentStatus": "RESOLVED",
+      "emergencyNumber": "112",
+      "emergencyCountry": "IN",
+      "isDemoScenario": false,
+      "notes": [
+        {
+          "id": "sosnote-mwfc7uhg-ubo",
+          "authorId": "user-admin-mwfc7kcj",
+          "authorName": "RideNexa Administrator",
+          "authorRole": "ADMIN",
+          "note": "Internal safety note: called passenger on phone",
+          "createdAt": "2026-11-13T18:55:58.996Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "sosevt-mwfc7ui5-asc3",
+          "incidentId": "SOS-MWFC7R38-5C1",
+          "eventType": "INCIDENT_RESOLVED",
+          "actorId": "user-admin-mwfc7kcj",
+          "actorRole": "ADMIN",
+          "message": "Passenger confirmed safe",
+          "timestamp": "2026-11-13T18:55:59.021Z"
+        },
+        {
+          "id": "sosevt-mwfc7uhy-faw6",
+          "incidentId": "SOS-MWFC7R38-5C1",
+          "eventType": "INCIDENT_ESCALATED",
+          "actorId": "user-admin-mwfc7kcj",
+          "actorRole": "ADMIN",
+          "message": "Incident escalated by RideNexa Administrator to Safety Lead Desk. Note: Urgent escalation",
+          "timestamp": "2026-11-13T18:55:59.014Z"
+        },
+        {
+          "id": "sosevt-mwfc7uhr-ua17",
+          "incidentId": "SOS-MWFC7R38-5C1",
+          "eventType": "ADMIN_ACKNOWLEDGED",
+          "actorId": "user-admin-mwfc7kcj",
+          "actorRole": "ADMIN",
+          "message": "Admin RideNexa Administrator (verify-admin@ridenexa.test) acknowledged SOS alert and began incident coordination.",
+          "timestamp": "2026-11-13T18:55:59.007Z"
+        },
+        {
+          "id": "sosevt-mwfc7uhg-g4lb",
+          "incidentId": "SOS-MWFC7R38-5C1",
+          "eventType": "ADMIN_NOTE_ADDED",
+          "actorId": "user-admin-mwfc7kcj",
+          "actorRole": "ADMIN",
+          "message": "Admin RideNexa Administrator added an internal safety coordination note.",
+          "timestamp": "2026-11-13T18:55:58.996Z"
+        },
+        {
+          "id": "sosevt-mwfc7u6k-q8sb",
+          "incidentId": "SOS-MWFC7R38-5C1",
+          "eventType": "POLICE_DISPATCH_CHECK",
+          "actorId": "system",
+          "actorRole": "SYSTEM",
+          "message": "Official police emergency dispatch API is not configured (POLICE_EMERGENCY_API_URL unset). Use Call 112 or share coordinates with emergency responders directly.",
+          "metadata": {
+            "policeNotificationStatus": "NOT_CONFIGURED"
+          },
+          "timestamp": "2026-11-13T18:55:58.604Z"
+        },
+        {
+          "id": "sosevt-mwfc7r38-2vw9",
+          "incidentId": "SOS-MWFC7R38-5C1",
+          "eventType": "ADMIN_NOTIFIED",
+          "actorId": "system",
+          "actorRole": "SYSTEM",
+          "message": "RideNexa Operations Command notified immediately in real time via Socket.IO.",
+          "timestamp": "2026-11-13T18:55:54.596Z"
+        },
+        {
+          "id": "sosevt-mwfc7r38-bmre",
+          "incidentId": "SOS-MWFC7R38-5C1",
+          "eventType": "LOCATION_CAPTURED",
+          "actorId": "user-1794596153236-d3qtw",
+          "actorRole": "PASSENGER",
+          "message": "Live browser GPS coordinates captured (12.9756, 77.6066 ±14m).",
+          "metadata": {
+            "locationSource": "LIVE_GPS",
+            "locationVerifiedCurrent": true
+          },
+          "timestamp": "2026-11-13T18:55:54.596Z"
+        },
+        {
+          "id": "sosevt-mwfc7r38-cx4i",
+          "incidentId": "SOS-MWFC7R38-5C1",
+          "eventType": "SOS_ACTIVATED",
+          "actorId": "user-1794596153236-d3qtw",
+          "actorRole": "PASSENGER",
+          "message": "PASSENGER SOS Passenger One activated Emergency SOS on ride BK-MWFC7R21-X8Z (HARASSMENT).",
+          "timestamp": "2026-11-13T18:55:54.596Z"
+        }
+      ],
+      "adminAccessLog": [
+        {
+          "id": "audit-mwfc7uha-gys5",
+          "adminId": "user-admin-mwfc7kcj",
+          "adminEmail": "verify-admin@ridenexa.test",
+          "action": "ADMIN_INSPECTED_INCIDENT",
+          "accessedAt": "2026-11-13T18:55:58.990Z"
+        }
+      ],
+      "idempotencyKey": "verify-sos-1794596154591",
+      "createdAt": "2026-11-13T18:55:54.596Z",
+      "updatedAt": "2026-11-13T18:55:59.021Z",
+      "readableAddress": "Mahatma Gandhi Road, Shanthala Nagar, Ashokanagar, Bengaluru Central City Corporation, Bengaluru, Bangalore North, Bengaluru Urban, Karnataka, 560001, India",
+      "policeLookupNote": "Police station directory lookup is temporarily unavailable. Dial 112 directly for immediate emergency help.",
+      "policeLastCheckedAt": "2026-11-13T18:55:58.604Z",
+      "acknowledgedAt": "2026-11-13T18:55:59.007Z",
+      "acknowledgedBy": "verify-admin@ridenexa.test",
+      "escalationTarget": "Safety Lead Desk",
+      "resolutionSummary": "Passenger confirmed safe",
+      "resolvedAt": "2026-11-13T18:55:59.021Z"
+    }
+  ],
+  "settings": {
+    "id": "global-settings",
+    "allocationWeights": {
+      "eta": 0.4,
+      "fairness": 0.3,
+      "reliability": 0.15,
+      "workload": 0.15
+    },
+    "maxPickupEtaMin": 25,
+    "maxReassignmentAttempts": 5,
+    "driverResponseTimeoutSec": 30,
+    "driverSearchIntervalSec": 4,
+    "maxBookingWaitSec": 180,
+    "surgeDemandRatioThreshold": 1.35,
+    "surgeMultiplierCap": 1.5,
+    "enableOsrmRouting": true,
+    "pricingConfig": {
+      "currency": "INR",
+      "platformFee": 0,
+      "poolingDiscountPct": 15,
+      "tiers": {
+        "ECO_HATCH": {
+          "baseFare": 40,
+          "perKmRate": 12.5,
+          "perMinRate": 1.5,
+          "minFare": 65
+        },
+        "CITY_SEDAN": {
+          "baseFare": 55,
+          "perKmRate": 15,
+          "perMinRate": 2,
+          "minFare": 85
+        },
+        "EV_COMFORT": {
+          "baseFare": 65,
+          "perKmRate": 16.5,
+          "perMinRate": 2.2,
+          "minFare": 100
+        },
+        "POOL_SHARE": {
+          "baseFare": 30,
+          "perKmRate": 9.5,
+          "perMinRate": 1.2,
+          "minFare": 50
+        }
+      }
+    },
+    "updatedAt": "2026-11-13T17:52:02.556Z",
+    "dispatchStrategy": "NEAREST_FIRST"
+  }
+}
